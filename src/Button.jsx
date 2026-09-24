@@ -1,4 +1,8 @@
-export function Button({ theme, setTheme }) {
+import { useContext } from "react";
+import { ThemeContext } from "./ThemeContext";
+
+export function Button() {
+  const { theme, setTheme } = useContext(ThemeContext);
   function toggleTheme() {
     setTheme(() => (theme === "light" ? "dark" : "light"));
   }
